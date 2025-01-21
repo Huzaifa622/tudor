@@ -27,7 +27,7 @@ export default function Register() {
   return (
     <div>
       <div className="flex">
-        <div className="bg-white h-screen w-full lg:w-1/2">
+        <div className=" w-full bg-gradient-to-r from-blue-300 via-slate-700 to-blue-900 h-screen    ">
           <div className="flex justify-center items-center h-full ">
             <form
               onSubmit={handleSubmit}
@@ -37,7 +37,7 @@ export default function Register() {
                 <Link href={"/login"} className="w-1/2 text-center text-black rounded-sm hover:text-white p-2 hover:bg-theme transition-all" >Login</Link>
                 <Link href={"/register"} className="w-1/2 bg-theme text-center p-2 rounded-sm" >Register</Link>
               </div>
-              <h1 className="text-3xl font-bold text-gray-800">Register</h1>
+              {/* <h1 className="text-3xl font-bold text-gray-800">Register</h1> */}
 {/* 
               <p className="capitalize text-sm">
                 already have an account?{" "}
@@ -81,9 +81,9 @@ export default function Register() {
             </form>
           </div>
         </div>
-        <div className="bg-white h-screen hidden lg:flex w-1/2 p-8  justify-end items-start">
-          <Image src={"/logo.svg"} alt="logo" width={200} height={100} />
-        </div>
+        {/* <div className="bg-white h-screen hidden lg:flex w-1/2 p-8  justify-end items-start"> */}
+          <Image src={"/logo.svg"} alt="logo" width={200} height={100} className="absolute top-4 left-4" />
+        {/* </div> */}
       </div>
     </div>
   );

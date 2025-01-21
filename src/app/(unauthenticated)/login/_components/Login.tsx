@@ -31,10 +31,10 @@ export default function Login() {
   return (
     <div>
       <div className="flex relative">
-        <div className=" h-screen bg-white hidden lg:flex items-start w-1/2 p-8">
-          <Image src={"/logo.svg"} alt="logo" width={200} height={100} />
-        </div>
-        <div className=" bg-white w-full lg:w-1/2 h-screen  ">
+        
+          <Image src={"/logo.svg"} alt="logo" width={200} height={100} className="absolute top-4 left-4" />
+       
+        <div className="  w-full bg-gradient-to-r from-blue-300 via-slate-700 to-blue-900 h-screen   ">
           <div className="flex justify-center items-center h-full">
           <form
               onSubmit={handleSubmit}
@@ -44,7 +44,7 @@ export default function Login() {
                 <Link href={"/login"} className="w-1/2 bg-theme text-center p-2 rounded-sm" >Login</Link>
                 <Link href={"/register"} className="w-1/2 text-center text-black rounded-sm hover:text-white p-2 hover:bg-theme transition-all" >Register</Link>
               </div>
-              <h1 className="text-3xl font-bold text-gray-800">Login</h1>
+              {/* <h1 className="text-3xl font-bold text-gray-800">Login</h1> */}
 
               {/* <p className="capitalize text-sm">
                 Don&apos;t have an account?{" "}
