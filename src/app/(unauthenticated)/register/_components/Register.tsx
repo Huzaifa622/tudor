@@ -27,14 +27,18 @@ export default function Register() {
   return (
     <div>
       <div className="flex">
-        <div className="bg-theme h-screen w-full lg:w-1/2">
+        <div className="bg-white h-screen w-full lg:w-1/2">
           <div className="flex justify-center items-center h-full ">
             <form
               onSubmit={handleSubmit}
               className="flex absolute top-[50%] left-[50%] transition-all translate-x-[-50%] translate-y-[-50%] flex-col justify-center items-center gap-4 w-[90%] md:w-[40%] py-4 bg-white p-2 rounded-xl drop-shadow-2xl drop-shadow-black"
             >
+                 <div className="flex gap-2 w-full text-white p-2" >
+                <Link href={"/login"} className="w-1/2 text-center text-black rounded-sm hover:text-white p-2 hover:bg-theme transition-all" >Login</Link>
+                <Link href={"/register"} className="w-1/2 bg-theme text-center p-2 rounded-sm" >Register</Link>
+              </div>
               <h1 className="text-3xl font-bold text-gray-800">Register</h1>
-
+{/* 
               <p className="capitalize text-sm">
                 already have an account?{" "}
                 <span>
@@ -42,7 +46,7 @@ export default function Register() {
                     Sign In
                   </Link>
                 </span>{" "}
-              </p>
+              </p> */}
               {/* <Input type="email" placeholder="Email"    value={formData.email}
                 onChange={(e) =>
                   setFormData((prev) => ({ ...prev, email: e.target.value }))
