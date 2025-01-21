@@ -43,7 +43,7 @@ export default function Login() {
               <h1 className="text-3xl font-bold text-gray-800">Login</h1>
 
               <p className="capitalize text-sm">
-                Don't have an account?{" "}
+                Don&apos;t have an account?{" "}
                 <span>
                   <Link href={"/register"} className="hover:underline">
                     Sign Up
