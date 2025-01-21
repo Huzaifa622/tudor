@@ -30,7 +30,7 @@ export default function Login() {
 
   return (
     <div>
-      <div className="flex">
+      <div className="flex relative">
         <div className=" h-screen bg-white hidden lg:flex items-start w-1/2 p-8">
           <Image src={"/logo.svg"} alt="logo" width={200} height={100} />
         </div>
@@ -38,12 +38,12 @@ export default function Login() {
           <div className="flex justify-center items-center h-full">
           <form
               onSubmit={handleSubmit}
-              className="flex flex-col justify-center items-center gap-4 w-[90%] md:w-[60%] py-4 bg-white p-2 rounded-xl drop-shadow-2xl drop-shadow-black"
+              className="flex absolute top-[50%] left-[50%] transition-all translate-x-[-50%] translate-y-[-50%] flex-col justify-center items-center gap-4 w-[90%] md:w-[40%] py-4 bg-white p-2 rounded-xl drop-shadow-2xl drop-shadow-black"
             >
               <h1 className="text-3xl font-bold text-gray-800">Login</h1>
 
               <p className="capitalize text-sm">
-                Dont have an account?{" "}
+                Don't have an account?{" "}
                 <span>
                   <Link href={"/register"} className="hover:underline">
                     Sign Up

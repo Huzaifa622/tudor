@@ -31,7 +31,7 @@ export default function Register() {
           <div className="flex justify-center items-center h-full ">
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col justify-center items-center gap-4 w-[90%] md:w-[60%] py-4 bg-white p-2 rounded-xl drop-shadow-2xl drop-shadow-black"
+              className="flex absolute top-[50%] left-[50%] transition-all translate-x-[-50%] translate-y-[-50%] flex-col justify-center items-center gap-4 w-[90%] md:w-[40%] py-4 bg-white p-2 rounded-xl drop-shadow-2xl drop-shadow-black"
             >
               <h1 className="text-3xl font-bold text-gray-800">Register</h1>
 
