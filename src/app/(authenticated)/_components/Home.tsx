@@ -82,15 +82,14 @@ const [youngP, setYoungP] = useState<
     const response = await api.get("/group_names");
     const data = response.data;
     setGroupNames(data);
-   const promise1 = await ordinaryPreview();  // Data from ordinaryPreview
-      const promise2 = await commitedPreview();  // Data from commitedPreview
-      const promise3 = await youngPreview();    // Data from youngPreview
+   const promise1 = await ordinaryPreview();  
+      const promise2 = await commitedPreview();  
+      const promise3 = await youngPreview();    
+      console.log(promise1, promise2, promise3); 
   
-      console.log(promise1, promise2, promise3); // Log the data
-  
-      // Assuming you want to update state after fetching the data:
-      setOrdinaryP(promise1!); // Set state with data from ordinaryPreview
-      setCommitedP(promise2!); // Set state with data from commitedPreview
+      
+      setOrdinaryP(promise1!); 
+      setCommitedP(promise2!); 
       setYoungP(promise3!); 
 
     setLoader(false);
