@@ -116,7 +116,7 @@ setUser(name)
           <div className="flex items-center gap-2 pr-4">
             <PreviewDialog commitedP={commitedP!} ordinaryP={ordinaryP!} youngP={youngP!}  />
             <button
-              className="flex text-sm md:text-base items-center gap-2 border transition-all ease-linear hover:bg-gray-100 py-2 rounded-md px-2 "
+              className="flex text-sm md:text-base items-center gap-2 border border-[#1D52A1] transition-all ease-linear hover:bg-gray-100 py-2 rounded-md px-2 "
               onClick={() => {
                 localStorage.removeItem("token");
                 window.location.href = "/login";
