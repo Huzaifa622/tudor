@@ -119,6 +119,7 @@ const PreviewDialog = ({youngP , ordinaryP , commitedP}:{youngP:IPlans[]; commit
                 </AccordionContent>
               </AccordionItem>
             ))}
+            {ordinaryP.length = 0 && "No Plan Found"}
           </Accordion>
         </CardContent>
       </Card>
@@ -147,6 +148,7 @@ const PreviewDialog = ({youngP , ordinaryP , commitedP}:{youngP:IPlans[]; commit
                 </AccordionContent>
               </AccordionItem>
             ))}
+            {commitedP.length = 0 && "No Plan Found"}
           </Accordion>
         </CardContent>
       </Card>
@@ -175,6 +177,7 @@ const PreviewDialog = ({youngP , ordinaryP , commitedP}:{youngP:IPlans[]; commit
                 </AccordionContent>
               </AccordionItem>
             ))}
+            {youngP.length = 0 && "No Plan Found"}
           </Accordion>
         </CardContent>
       </Card>
