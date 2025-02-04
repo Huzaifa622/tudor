@@ -87,155 +87,100 @@ const PreviewDialog = ({youngP , ordinaryP , commitedP}:{youngP:IPlans[]; commit
           Preview
         </button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[80%] h-[50vh] bg-[#1D52A1]">
-        <DialogTitle></DialogTitle>
-        <Tabs defaultValue="account" className="">
-          <TabsList className="grid  w-full grid-cols-3">
-            <TabsTrigger className="" value="ordinary">Regular Plan</TabsTrigger>
-            <TabsTrigger value="committed">Committed Plan</TabsTrigger>
-            <TabsTrigger value="young">Young Plan</TabsTrigger>
-          </TabsList>
-          <TabsContent value="ordinary">
-            <Card className="bg-[#1d51a0]">
-              <CardContent className="space-y-2">
-                <Accordion
-                  type="single"
-                  collapsible
-                  className="w-full text-white"
-                >
-                  {ordinaryP?.map((s) => (
-                    <AccordionItem key={s.id} value={s.id}>
-                      <AccordionTrigger>{s.GroupName}</AccordionTrigger>
-                      <AccordionContent>
-                        {s.Schools.map((a) => (
-                          <div
-                            key={a.school_id}
-                            className=" bg-white text-black my-2 hover:bg-blue-400 px-6 w-full py-4 flex justify-between rounded-md transition-all ease-linear "
-                          >
-                            <div>{a.school_name}</div>
-                            {a.docx_files.map((d) => (
-                              <Link
-                                key={d.file_id}
-                                href={`https://drive.google.com/file/d/${d.file_id}/view`}
-                                target="_blank"
-                              >
-                                {" "}
-                                <Eye />{" "}
-                              </Link>
-                            ))}
-                          </div>
-                        ))}
-                      </AccordionContent>
-                    </AccordionItem>
+    <DialogContent className="sm:max-w-[80%] h-[50vh] bg-[#1D52A1] overflow-y-auto">
+  <DialogTitle></DialogTitle>
+  <Tabs defaultValue="account" className="">
+    <TabsList className="grid w-full grid-cols-3">
+      <TabsTrigger className="" value="ordinary">Regular Plan</TabsTrigger>
+      <TabsTrigger value="committed">Committed Plan</TabsTrigger>
+      <TabsTrigger value="young">Young Plan</TabsTrigger>
+    </TabsList>
+    <TabsContent value="ordinary">
+      <Card className="bg-[#1d51a0]">
+        <CardContent className="space-y-2 overflow-y-auto max-h-[40vh]">
+          <Accordion type="single" collapsible className="w-full text-white">
+            {ordinaryP?.map((s) => (
+              <AccordionItem key={s.id} value={s.id}>
+                <AccordionTrigger>{s.GroupName}</AccordionTrigger>
+                <AccordionContent>
+                  {s.Schools.map((a) => (
+                    <div
+                      key={a.school_id}
+                      className="bg-white text-black my-2 hover:bg-blue-400 px-6 w-full py-4 flex justify-between rounded-md transition-all ease-linear"
+                    >
+                      <div>{a.school_name}</div>
+                      {a.docx_files.map((d) => (
+                        <Link key={d.file_id} href={`https://drive.google.com/file/d/${d.file_id}/view`} target="_blank">
+                          <Eye />
+                        </Link>
+                      ))}
+                    </div>
                   ))}
-                </Accordion>
-              </CardContent>
-              <CardFooter>{/* <Button>Save changes</Button> */}</CardFooter>
-            </Card>
-          </TabsContent>
-          <TabsContent value="committed">
-            <Card className="bg-[#1d51a0]">
-              <CardContent className="space-y-2">
-                <Accordion
-                  type="single"
-                  collapsible
-                  className="w-full text-white"
-                >
-                  {commitedP?.map((s) => (
-                    <AccordionItem key={s.id} value={s.id}>
-                      <AccordionTrigger>{s.GroupName}</AccordionTrigger>
-                      <AccordionContent>
-                        {s.Schools.map((a) => (
-                          <div
-                            key={a.school_id}
-                            className=" bg-white text-black my-2 hover:bg-blue-400 px-6 w-full py-4 flex justify-between rounded-md transition-all ease-linear "
-                          >
-                            <div>{a.school_name}</div>
-                            {a.docx_files.map((d) => (
-                              <Link
-                                key={d.file_id}
-                                href={`https://drive.google.com/file/d/${d.file_id}/view`}
-                                target="_blank"
-                              >
-                                {" "}
-                                <Eye />{" "}
-                              </Link>
-                            ))}
-                          </div>
-                        ))}
-                      </AccordionContent>
-                    </AccordionItem>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </CardContent>
+      </Card>
+    </TabsContent>
+    <TabsContent value="committed">
+      <Card className="bg-[#1d51a0]">
+        <CardContent className="space-y-2 overflow-y-auto max-h-[40vh]">
+          <Accordion type="single" collapsible className="w-full text-white">
+            {commitedP?.map((s) => (
+              <AccordionItem key={s.id} value={s.id}>
+                <AccordionTrigger>{s.GroupName}</AccordionTrigger>
+                <AccordionContent>
+                  {s.Schools.map((a) => (
+                    <div
+                      key={a.school_id}
+                      className="bg-white text-black my-2 hover:bg-blue-400 px-6 w-full py-4 flex justify-between rounded-md transition-all ease-linear"
+                    >
+                      <div>{a.school_name}</div>
+                      {a.docx_files.map((d) => (
+                        <Link key={d.file_id} href={`https://drive.google.com/file/d/${d.file_id}/view`} target="_blank">
+                          <Eye />
+                        </Link>
+                      ))}
+                    </div>
                   ))}
-                </Accordion>
-              </CardContent>
-              <CardFooter>{/* <Button>Save changes</Button> */}</CardFooter>
-            </Card>
-          </TabsContent>
-          <TabsContent value="young">
-            <Card className="bg-[#1d51a0]">
-              <CardContent className="space-y-2">
-                <Accordion
-                  type="single"
-                  collapsible
-                  className="w-full text-white"
-                >
-                  {youngP?.map((s) => (
-                    <AccordionItem key={s.id} value={s.id}>
-                      <AccordionTrigger>{s.GroupName}</AccordionTrigger>
-                      <AccordionContent>
-                        {s.Schools.map((a) => (
-                          <div
-                            key={a.school_id}
-                            className=" bg-white text-black my-2 hover:bg-blue-400 px-6 w-full py-4 flex justify-between rounded-md transition-all ease-linear "
-                          >
-                            <div>{a.school_name}</div>
-                            {a.docx_files.map((d) => (
-                              <Link
-                                key={d.file_id}
-                                href={`https://drive.google.com/file/d/${d.file_id}/view`}
-                                target="_blank"
-                              >
-                                {" "}
-                                <Eye />{" "}
-                              </Link>
-                            ))}
-                          </div>
-                        ))}
-                      </AccordionContent>
-                    </AccordionItem>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </CardContent>
+      </Card>
+    </TabsContent>
+    <TabsContent value="young">
+      <Card className="bg-[#1d51a0]">
+        <CardContent className="space-y-2 overflow-y-auto max-h-[40vh]">
+          <Accordion type="single" collapsible className="w-full text-white">
+            {youngP?.map((s) => (
+              <AccordionItem key={s.id} value={s.id}>
+                <AccordionTrigger>{s.GroupName}</AccordionTrigger>
+                <AccordionContent>
+                  {s.Schools.map((a) => (
+                    <div
+                      key={a.school_id}
+                      className="bg-white text-black my-2 hover:bg-blue-400 px-6 w-full py-4 flex justify-between rounded-md transition-all ease-linear"
+                    >
+                      <div>{a.school_name}</div>
+                      {a.docx_files.map((d) => (
+                        <Link key={d.file_id} href={`https://drive.google.com/file/d/${d.file_id}/view`} target="_blank">
+                          <Eye />
+                        </Link>
+                      ))}
+                    </div>
                   ))}
-                </Accordion>
-              </CardContent>
-              <CardFooter>{/* <Button>Save changes</Button> */}</CardFooter>
-            </Card>
-          </TabsContent>
-        </Tabs>
-
-        {/* <DialogFooter className="flex justify-center items-center w-full">
-            <button
-              onClick={async (e: React.SyntheticEvent) => {
-                e.preventDefault();
-                setLoader(true);
-                await api.post("generate", {
-                  "group_id": groupId,
-                  "selected_cycle": cycle == "" ? null : cycle
-                } , {headers:{
-                  Accept:"application/json",
-                  "Content-Type":"application/json"
-                }}).then((res) => {
-                  console.log(res.data);
-                });
-  
-                setLoader(false);
-              }}
-              className="bg-[#1D52A1] p-2 rounded-md text-white w-full"
-              type="submit"
-              disabled={loader}
-            >
-              Confirm
-            </button>
-          </DialogFooter> */}
-      </DialogContent>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </CardContent>
+      </Card>
+    </TabsContent>
+  </Tabs>
+</DialogContent>
     </Dialog>
   );
 }
