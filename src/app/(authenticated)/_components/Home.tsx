@@ -110,9 +110,9 @@ setUser(name)
   return (
     <div>
       <div className=" flex flex-col gap-8 items-center justify-center">
-        <div className=" p-4 flex justify-between w-full">
+        <div className=" p-4 flex justify-between items-center w-full">
           <Image src={"/logo.svg"} width={200} height={200} alt="logo" className="w-[25%] md:w-[15%]" />
-            <h1>Welcome {user}</h1>
+            <h1 className="text-lg" >Welcome {user}</h1>
           <div className="flex items-center gap-2 pr-4">
             <PreviewDialog commitedP={commitedP!} ordinaryP={ordinaryP!} youngP={youngP!}  />
             <button
