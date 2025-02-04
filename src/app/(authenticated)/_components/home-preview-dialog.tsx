@@ -87,7 +87,7 @@ const PreviewDialog = ({youngP , ordinaryP , commitedP}:{youngP:IPlans[]; commit
           Preview
         </button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[80%] bg-[#1D52A1]">
+      <DialogContent className="sm:max-w-[80%] h-[50vh] bg-[#1D52A1]">
         <DialogTitle></DialogTitle>
         <Tabs defaultValue="account" className="">
           <TabsList className="grid  w-full grid-cols-3">
