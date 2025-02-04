@@ -119,7 +119,9 @@ const PreviewDialog = ({youngP , ordinaryP , commitedP}:{youngP:IPlans[]; commit
                 </AccordionContent>
               </AccordionItem>
             ))}
-            {ordinaryP.length = 0 && "No Plan Found"}
+            <div className="flex justify-center pt-4 items-center" >
+            {ordinaryP && ordinaryP.length == 0 && "No Plan Found"}
+            </div>
           </Accordion>
         </CardContent>
       </Card>
@@ -148,7 +150,9 @@ const PreviewDialog = ({youngP , ordinaryP , commitedP}:{youngP:IPlans[]; commit
                 </AccordionContent>
               </AccordionItem>
             ))}
-            {commitedP.length = 0 && "No Plan Found"}
+                  <div className="flex justify-center pt-4 items-center" >
+            {commitedP && commitedP.length == 0 && "No Plan Found"}
+            </div>
           </Accordion>
         </CardContent>
       </Card>
@@ -177,7 +181,9 @@ const PreviewDialog = ({youngP , ordinaryP , commitedP}:{youngP:IPlans[]; commit
                 </AccordionContent>
               </AccordionItem>
             ))}
-            {youngP.length = 0 && "No Plan Found"}
+            <div className="flex justify-center pt-4 items-center" >
+            {youngP && youngP.length == 0 && "No Plan Found"}
+            </div>
           </Accordion>
         </CardContent>
       </Card>
