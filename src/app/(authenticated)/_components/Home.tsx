@@ -18,6 +18,7 @@ import Loader from "./loader";
 import { LogOut } from "lucide-react";
 import { commitedPreview, ordinaryPreview, youngPreview } from "@/lib/actions";
 
+
 export default function Home() {
   const [user,setUser] = useState()
   const [groupNames, setGroupNames] =

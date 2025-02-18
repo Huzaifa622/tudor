@@ -219,9 +219,9 @@ export function SchoolDialog({
                     window.location.reload();
                     setLoader(false);
                   }).catch(err=>{
-                    setLoader(false);
                     // console.log(err)
-                    toast.error(err.response.data.detail)
+                    toast.error(err.response.data.detail , {duration: 4000})
+                    setLoader(false);
                   });
                 return;
               }
@@ -254,9 +254,9 @@ export function SchoolDialog({
                     window.location.reload();
                     setLoader(false);
                   }).catch(err=>{
-                    setLoader(false);
                     // console.log(err)
-                    toast.error(err.response.data.detail)
+                    toast.error(err.response.data.detail , {duration: 4000})
+                    setLoader(false);
                   });
                 return;
               }
@@ -286,9 +286,9 @@ export function SchoolDialog({
                     window.location.reload();
                     setLoader(false);
                   }).catch(err=>{
-                    setLoader(false);
                     // console.log(err)
-                    toast.error(err.response.data.detail)
+                    toast.error(err.response.data.detail , {duration: 4000})
+                    setLoader(false);
                   });
                 return;
               }
