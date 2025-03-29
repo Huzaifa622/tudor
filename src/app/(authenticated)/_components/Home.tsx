@@ -16,7 +16,7 @@ import PreviewDialog from "./home-preview-dialog";
 // import { flushAllTraces } from "next/dist/trace";
 import Loader from "./loader";
 import { LogOut } from "lucide-react";
-import { commitedPreview, ordinaryPreview, youngPreview } from "@/lib/actions";
+import { commitedPreview, elitePortalPreview, ordinaryPreview, youngPreview } from "@/lib/actions";
 
 
 export default function Home() {
@@ -64,6 +64,20 @@ const [commitedP, setCommitedP] = useState<
     }[];
   }[]
 >();
+const [eliteP, setEliteP] = useState<
+  {
+    id: string;
+    GroupName: string;
+    Schools: {
+      school_id: string;
+      school_name: string;
+      docx_files: {
+        file_name: string;
+        file_id: string;
+      }[];
+    }[];
+  }[]
+>();
 const [youngP, setYoungP] = useState<
   {
     id: string;
@@ -86,12 +100,14 @@ const [youngP, setYoungP] = useState<
    const promise1 = await ordinaryPreview();  
       const promise2 = await commitedPreview();  
       const promise3 = await youngPreview();    
-      console.log(promise1, promise2, promise3); 
+      const promise4 = await elitePortalPreview();    
+      // console.log(promise1, promise2, promise3 , promise4); 
   
       
       setOrdinaryP(promise1!); 
       setCommitedP(promise2!); 
       setYoungP(promise3!); 
+      setEliteP(promise4!)
 
     setLoader(false);
   };
@@ -115,7 +131,7 @@ setUser(name)
           <Image src={"/logo.svg"} width={200} height={200} alt="logo" className="w-[25%] md:w-[15%]" />
             <h1 className="text-lg" >Welcome {user}</h1>
           <div className="flex items-center gap-2 pr-4">
-            <PreviewDialog commitedP={commitedP!} ordinaryP={ordinaryP!} youngP={youngP!}  />
+            <PreviewDialog commitedP={commitedP!} ordinaryP={ordinaryP!} youngP={youngP!} eliteP={eliteP!}  />
             <button
               className="flex text-sm md:text-base items-center gap-2 border border-[#1D52A1] transition-all ease-linear hover:bg-gray-100 py-2 rounded-md px-2 "
               onClick={() => {

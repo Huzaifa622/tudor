@@ -54,7 +54,7 @@ interface IPlans {
     }[];
   }
 
-const PreviewDialog = ({youngP , ordinaryP , commitedP}:{youngP:IPlans[]; commitedP:IPlans[]; ordinaryP:IPlans[]; }) => {
+const PreviewDialog = ({youngP , ordinaryP , commitedP , eliteP}:{youngP:IPlans[]; commitedP:IPlans[]; ordinaryP:IPlans[]; eliteP:IPlans[] }) => {
 
   // const [preview, setPreview] = useState<string>("");
 
@@ -90,10 +90,11 @@ const PreviewDialog = ({youngP , ordinaryP , commitedP}:{youngP:IPlans[]; commit
     <DialogContent className="sm:max-w-[80%] bg-[#1D52A1] overflow-y-auto">
   <DialogTitle></DialogTitle>
   <Tabs defaultValue="account" className="">
-    <TabsList className="grid w-full grid-cols-3">
+    <TabsList className="grid h-fit w-full md:grid-cols-4">
       <TabsTrigger className="" value="ordinary">Regular Plan</TabsTrigger>
       <TabsTrigger value="committed">Committed Plan</TabsTrigger>
       <TabsTrigger value="young">Young Plan</TabsTrigger>
+      <TabsTrigger value="portal_elite">Portal Elite Avenue Plan</TabsTrigger>
     </TabsList>
     <TabsContent value="ordinary">
       <Card className="bg-[#1d51a0]">
@@ -183,6 +184,37 @@ const PreviewDialog = ({youngP , ordinaryP , commitedP}:{youngP:IPlans[]; commit
             ))}
             <div className="flex justify-center pt-4 items-center" >
             {youngP && youngP.length == 0 && "No Plan Found"}
+            </div>
+          </Accordion>
+        </CardContent>
+      </Card>
+    </TabsContent>
+    <TabsContent value="portal_elite">
+      <Card className="bg-[#1d51a0]">
+        <CardContent className="space-y-2 overflow-y-auto max-h-[40vh]">
+          <Accordion type="single" collapsible className="w-full text-white">
+            {eliteP?.map((s) => (
+              <AccordionItem key={s.id} value={s.id}>
+                <AccordionTrigger>{s.GroupName}</AccordionTrigger>
+                <AccordionContent>
+                  {s.Schools.map((a) => (
+                    <div
+                      key={a.school_id}
+                      className="bg-white text-black my-2 hover:bg-blue-400 px-6 w-full py-4 flex justify-between rounded-md transition-all ease-linear"
+                    >
+                      <div>{a.school_name}</div>
+                      {a.docx_files.map((d) => (
+                        <Link key={d.file_id} href={`https://drive.google.com/file/d/${d.file_id}/view`} target="_blank">
+                          <Eye />
+                        </Link>
+                      ))}
+                    </div>
+                  ))}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+            <div className="flex justify-center pt-4 items-center" >
+            {eliteP && eliteP.length == 0 && "No Plan Found"}
             </div>
           </Accordion>
         </CardContent>

@@ -130,6 +130,13 @@ export function SchoolDialog({
                   >
                     {"Young"}
                   </SelectItem>
+                  <SelectItem
+                    className="hover:bg-gray-100 cursor-pointer"
+                    // key={g.id}
+                    value={"elite"}
+                  >
+                    {"Portal Elite Avenue Plan"}
+                  </SelectItem>
 
                   {/* ))} */}
                   {/* <SelectLabel>Fruits</SelectLabel> */}
@@ -277,6 +284,37 @@ export function SchoolDialog({
                 await api
                   .post(
                     "young_plan",
+                    formData
+                  )
+                  .then((res) => {
+                    // await api.get("preview")
+                    console.log(res.data);
+                    toast.success(res.data.status);
+                    window.location.reload();
+                    setLoader(false);
+                  }).catch(err=>{
+                    // console.log(err)
+                    toast.error(err.response.data.detail , {duration: 4000})
+                    setLoader(false);
+                  });
+                return;
+              }
+              if (plan == "elite") {
+                const formData = new FormData();
+
+                // Append the files to FormData
+                files.forEach((file) => {
+                  formData.append("files[]", file); // 'files[]' is the key for files
+                });
+            
+                // Append other fields to FormData
+                formData.append("group_id", groupId);
+                // formData.append("selected_cycle",  String(cycle));
+                formData.append("school_ids", JSON.stringify(selectedSchool)); // Assuming selectedSchool is an array
+                formData.append("prompt", prompt);
+                await api
+                  .post(
+                    "portal_elite_avenue_plan",
                     formData
                   )
                   .then((res) => {

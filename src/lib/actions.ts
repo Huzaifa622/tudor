@@ -31,3 +31,12 @@ export async function youngPreview() {
     return null; // Return null or handle error accordingly
   }
 }
+export async function elitePortalPreview() {
+  try {
+    const res = await api.get("portal_elite_avenue_plan_preview");
+    return res.data; // Return the data directly
+  } catch (error) {
+    console.error('Error fetching data from youngPreview:', error);
+    return null; // Return null or handle error accordingly
+  }
+}
